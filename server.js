@@ -30,6 +30,10 @@ io.on('connection', (socket) => {
     console.log('a user connected')
 })
 
+mongoose.connect(dbUrl, { useNewUrlParser: true }, (err) => {
+    console.log('mongodb db connection', err)
+})
+
 var server = http.listen(3000, () => {
     console.log('Server is listening on port', server.address().port)
 })
