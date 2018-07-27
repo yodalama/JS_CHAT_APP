@@ -3,10 +3,13 @@ var bodyParser = require('body-parser')
 var app = express()
 var http = require('http').Server(app)
 var io = require('socket.io')(http)
+var mongoose = require('mongoose')
 
 app.use(express.static(__dirname))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
+
+var dbUrl = 'mongodb://user_admin:useradmin1@ds018568.mlab.com:18568/learning-node-yodalama'
 
 var messages = [
     {name: 'Tim', message: 'Good_day'},
